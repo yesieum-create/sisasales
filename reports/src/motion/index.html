@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8">
+<style>
+@font-face{font-family:P;font-weight:400;src:url(Pretendard-Regular.otf)}
+@font-face{font-family:P;font-weight:600;src:url(Pretendard-SemiBold.otf)}
+@font-face{font-family:P;font-weight:700;src:url(Pretendard-Bold.otf)}
+@font-face{font-family:P;font-weight:800;src:url(Pretendard-ExtraBold.otf)}
+:root{--deep:#102B49;--royal:#2447C9;--sky:#83C9F2;--lblue:#EAF4FC;--lgray:#F4F6F8;--text:#172536;--muted:#5D6B78;--div:#D9E2EB;--red:#C0392B;--amber:#D68910;--green:#1E8449}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1920px;height:1080px;overflow:hidden;background:#fff;font-family:P,sans-serif;color:var(--text);word-break:keep-all}
+.scene{position:absolute;inset:0;display:none;overflow:hidden}
+.dark{background:var(--deep);color:#fff}
+.pad{position:absolute;left:120px;right:120px;top:96px}
+.tag{font-size:26px;font-weight:700;color:var(--royal);letter-spacing:.12em}
+.dark .tag{color:var(--sky)}
+h2{font-size:62px;font-weight:800;color:var(--deep);line-height:1.25;margin-top:18px;white-space:nowrap}
+.sub{font-size:30px;color:var(--muted);margin-top:16px}
+.a{will-change:transform,opacity}
+/* footer + progress + bands */
+#foot{position:absolute;left:120px;bottom:42px;background:var(--lgray);border-radius:30px;padding:12px 26px;font-size:22px;color:var(--muted);font-weight:600;z-index:50}
+#foot b{color:var(--royal)}
+#prog{position:absolute;left:0;bottom:0;height:6px;background:var(--royal);z-index:60}
+.band{position:absolute;top:0;left:0;width:120%;height:100%;z-index:80;transform:translateX(-130%)}
+#b1{background:var(--sky)}#b2{background:var(--royal)}
+/* generic */
+.card{background:var(--lgray);border-radius:14px;padding:34px 36px}
+.pill{display:inline-block;padding:8px 22px;border-radius:30px;color:#fff;font-weight:700;font-size:24px}
+</style></head><body>
+
+<!-- S1 COVER -->
+<section class="scene dark" id="s1">
+  <img src="logo.png" class="a" data-fx="fade" data-at="0.3" style="position:absolute;right:120px;top:90px;height:64px">
+  <div style="position:absolute;left:150px;top:300px">
+    <div class="a tag" data-fx="left" data-at="0.4" style="font-size:30px">SISA COMPANY · STRATEGY BRIEF</div>
+    <div class="a" data-fx="up" data-at="0.9" data-d="1.1" style="font-size:118px;font-weight:800;line-height:1.18;margin-top:36px;white-space:nowrap">한국 비인가 국제학교의<br>현재와 미래</div>
+    <div class="a" data-fx="grow" data-at="2.0" style="display:flex;margin-top:46px;transform-origin:left"><div style="width:200px;height:10px;background:var(--royal)"></div><div style="width:70px;height:10px;background:var(--sky)"></div></div>
+    <div class="a" data-fx="up" data-at="2.4" style="font-size:38px;color:#D6E6F5;margin-top:40px">단속 국면의 ‘학교 아닌 국제학교’ — 시장 진단과 2030 시나리오</div>
+    <div class="a" data-fx="fade" data-at="3.2" style="font-size:26px;color:#9FB6CC;margin-top:30px">2026. 11 · 대표이사 보고</div>
+  </div>
+</section>
+
+<!-- S2 ONE LINE -->
+<section class="scene" id="s2">
+  <div style="position:absolute;left:150px;right:150px;top:250px">
+    <div class="a tag" data-fx="left" data-at="0.2">KEY MESSAGE</div>
+    <div class="a" data-fx="up" data-at="0.6" style="font-size:84px;font-weight:800;color:var(--deep);line-height:1.3;margin-top:30px">단속이 겨냥하는 것은<br><span style="color:var(--royal)">‘학교 형태’</span>이지 ‘수요’가 아니다</div>
+    <div class="a" data-fx="grow" data-at="2.0" style="width:1000px;height:4px;background:var(--div);margin-top:60px;transform-origin:left"></div>
+    <div style="display:flex;gap:60px;margin-top:56px;font-size:40px;font-weight:600">
+      <div class="a" data-fx="up" data-at="2.6"><span style="color:var(--red)">●</span> 전일제 비인가 학교 — 축소</div>
+      <div class="a" data-fx="up" data-at="3.6"><span style="color:var(--green)">●</span> 영어 몰입·해외진학 수요 — 이동</div>
+    </div>
+  </div>
+</section>
+
+<!-- S3 KPI -->
+<section class="scene" id="s3">
+  <div class="pad">
+    <div class="a tag" data-fx="left" data-at="0.2">01 · 현재 상황</div>
+    <h2 class="a" data-fx="up" data-at="0.4">정부가 처음 확인한 숫자들</h2>
+  </div>
+  <div id="kpis" style="position:absolute;left:120px;right:120px;top:360px;display:grid;grid-template-columns:repeat(4,1fr);gap:36px"></div>
+</section>
+
+<!-- S4 FOUR WORLDS -->
+<section class="scene" id="s4">
+  <div class="pad">
+    <div class="a tag" data-fx="left" data-at="0.2">02 · 법적 지위</div>
+    <h2 class="a" data-fx="up" data-at="0.4">같은 ‘국제학교’, 네 개의 서로 다른 세계</h2>
+  </div>
+  <div id="worlds" style="position:absolute;left:120px;right:120px;top:380px;display:grid;grid-template-columns:repeat(4,1fr);gap:30px"></div>
+  <div class="a" data-fx="up" data-at="5.6" style="position:absolute;left:120px;right:120px;top:800px;background:var(--lblue);border-radius:14px;padding:26px 36px;font-size:34px;font-weight:700;color:var(--deep)">본질은 불법 운영이 아니라 <span style="color:var(--royal)">수요는 있는데 합법 공급 경로가 없는 제도 공백</span></div>
+</section>
+
+<!-- S5 CHARTS -->
+<section class="scene" id="s5">
+  <div class="pad">
+    <div class="a tag" data-fx="left" data-at="0.2">03 · 시장 규모</div>
+    <h2 class="a" data-fx="up" data-at="0.4">97곳 중 74%가 수도권에 몰려 있다</h2>
+  </div>
+  <div style="position:absolute;left:120px;width:800px;top:350px">
+    <div class="a" data-fx="fade" data-at="0.8" style="font-size:30px;font-weight:700;color:var(--deep);margin-bottom:30px">출처별 비인가 국제학교 수 (곳)</div>
+    <div id="hbars"></div>
+  </div>
+  <div style="position:absolute;left:1040px;width:760px;top:350px">
+    <div class="a" data-fx="fade" data-at="3.4" style="font-size:30px;font-weight:700;color:var(--deep);margin-bottom:20px">지역 분포 (곳, 교육부 97곳)</div>
+    <div id="vbars" style="display:flex;align-items:flex-end;gap:60px;height:440px;border-bottom:3px solid var(--div);padding-left:30px"></div>
+    <div style="display:flex;gap:60px;padding-left:30px;margin-top:14px;font-size:28px;font-weight:600" id="vlab"></div>
+  </div>
+  <div class="a" data-fx="fade" data-at="6" style="position:absolute;left:120px;top:930px;font-size:20px;color:var(--muted)">출처: 교육부 점검(2025.12–2026.3) 관련 보도, KBS 추적60분, ISC Research(2023, 언론 인용)</div>
+</section>
+
+<!-- S6 DEMAND -->
+<section class="scene" id="s6">
+  <div class="pad">
+    <div class="a tag" data-fx="left" data-at="0.2">04 · 수요 구조</div>
+    <h2 class="a" data-fx="up" data-at="0.4">수요의 뿌리: 영어 몰입 → 해외진학 → 공교육 이탈</h2>
+  </div>
+  <div id="chev" style="position:absolute;left:120px;right:120px;top:370px;display:flex;height:220px"></div>
+  <div style="position:absolute;left:120px;right:120px;top:660px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:30px" id="drivers"></div>
+</section>
+
+<!-- S7 TIMELINE -->
+<section class="scene" id="s7">
+  <div class="pad">
+    <div class="a tag" data-fx="left" data-at="0.2">05 · 정책 흐름</div>
+    <h2 class="a" data-fx="up" data-at="0.4">2026년, ‘방치’에서 ‘집중 단속’으로</h2>
+  </div>
+  <div class="a" data-fx="grow" data-at="0.8" data-d="1.4" style="position:absolute;left:120px;right:120px;top:600px;height:6px;background:var(--div);transform-origin:left"></div>
+  <div id="tl"></div>
+</section>
+
+<!-- S8 LIMITS -->
+<section class="scene" id="s8">
+  <div style="position:absolute;left:0;top:0;bottom:0;width:50%;background:var(--deep)" class="a" data-fx="wipeR" data-at="0" data-d="1"></div>
+  <div style="position:absolute;left:120px;top:110px;width:740px;color:#fff">
+    <div class="a tag" data-fx="left" data-at="0.8" style="color:var(--sky)">06 · 집행의 한계</div>
+    <div class="a" data-fx="up" data-at="1.1" style="font-size:58px;font-weight:800;margin-top:20px;line-height:1.3">의지는 강하지만<br>수단은 약하다</div>
+    <div class="a" data-fx="scale" data-at="2.0" style="margin-top:70px;font-size:200px;font-weight:800;line-height:1;color:var(--sky)">0<span style="font-size:72px">건</span></div>
+    <div class="a" data-fx="up" data-at="2.6" style="font-size:36px;margin-top:20px;color:#D6E6F5">폐쇄명령 집행 실적 (2026.10)</div>
+    <div class="a" data-fx="up" data-at="3.4" style="font-size:28px;margin-top:40px;color:#9FB6CC;line-height:1.5">“폐쇄명령을 내려도 수업을 계속하면<br>강제로 막을 권한이 없다” — 교육부 관계자</div>
+  </div>
+  <div style="position:absolute;left:1080px;right:120px;top:120px">
+    <div class="a" data-fx="fade" data-at="1.6" style="font-size:34px;font-weight:700;color:var(--deep);margin-bottom:30px">시장은 이미 ‘우회 모델’로</div>
+    <div id="bypass"></div>
+  </div>
+</section>
+
+<!-- S9 SCENARIOS -->
+<section class="scene" id="s9">
+  <div class="pad">
+    <div class="a tag" data-fx="left" data-at="0.2">07 · 2027–2030 시나리오</div>
+    <h2 class="a" data-fx="up" data-at="0.4">가장 유력한 미래: 학교형 축소 + 수요의 합법 이동</h2>
+  </div>
+  <div id="scen" style="position:absolute;left:120px;right:120px;top:360px;display:grid;grid-template-columns:1fr 1.15fr 1fr;gap:34px;align-items:end"></div>
+  <div class="a" data-fx="fade" data-at="6" style="position:absolute;left:120px;top:930px;font-size:20px;color:var(--muted)">※ 확률은 공개 정보에 근거한 분석자의 판단</div>
+</section>
+
+<!-- S10 RECO -->
+<section class="scene" id="s10">
+  <div class="pad">
+    <div class="a tag" data-fx="left" data-at="0.2">08 · 시사컴퍼니 권고</div>
+    <h2 class="a" data-fx="up" data-at="0.4">‘학교’가 아닌 ‘합법 보완교육’에서 수요를 흡수한다</h2>
+  </div>
+  <div class="a" data-fx="wipeR" data-at="1.2" data-d="1" style="position:absolute;left:120px;right:120px;top:330px;height:150px;background:var(--deep);border-radius:14px;display:flex;align-items:center;gap:40px;padding:0 44px">
+    <div style="background:var(--sky);color:var(--deep);font-weight:800;font-size:38px;padding:16px 30px;border-radius:8px;white-space:nowrap">CONDITIONAL GO</div>
+    <div style="color:#fff;font-size:34px;font-weight:700;line-height:1.4">방과후 영어 몰입 · 제2외국어 파일럿 — 법무 검토와 컴플라이언스 점검 완료가 조건</div>
+  </div>
+  <div id="dec" style="position:absolute;left:120px;right:120px;top:530px"></div>
+</section>
+
+<!-- S11 ENDING -->
+<section class="scene dark" id="s11">
+  <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center">
+    <img src="logo.png" class="a" data-fx="scale" data-at="0.3" data-d="1.2" style="height:120px">
+    <div class="a" data-fx="up" data-at="1.0" style="font-size:48px;font-weight:700;margin-top:60px">수요는 사라지지 않는다. 형태가 바뀔 뿐이다.</div>
+    <div class="a" data-fx="fade" data-at="1.8" style="font-size:26px;color:#9FB6CC;margin-top:30px">SISA COMPANY · 한국 비인가 국제학교의 현재와 미래 · 2026.11</div>
+  </div>
+</section>
+
+<div id="foot"></div><div id="prog"></div>
+<div class="band" id="b1"></div><div class="band" id="b2"></div>
+
+<script>
+const SC=[['s1',0,8],['s2',8,17],['s3',17,27],['s4',27,37],['s5',37,47],['s6',47,56],['s7',56,66],['s8',66,75.5],['s9',75.5,85.5],['s10',85.5,95],['s11',95,100.1]];
+const TOTAL=100.1;
+const LABEL={s2:'핵심 메시지',s3:'현재 상황',s4:'법적 지위',s5:'시장 규모',s6:'수요 구조',s7:'정책 흐름',s8:'집행의 한계',s9:'시나리오',s10:'권고'};
+const $=id=>document.getElementById(id);
+const H=(tag,attrs,html)=>`<${tag} ${attrs}>${html}</${tag}>`;
+
+// S3 KPIs
+const K=[['97','곳','미인가 국제학교','교육부 점검 213곳 중 확인',true],['74','%','수도권 집중도','경기 39 · 서울 33'],['4150','만원','고등부 연평균 학비','주요 30곳, 사걱세 2026.2'],['0','건','폐쇄명령 집행','2026.10 보도 기준']];
+$('kpis').innerHTML=K.map((k,i)=>`<div class="a" data-fx="pop" data-at="${1.2+i*0.75}" style="background:${k[4]?'var(--deep)':'var(--lgray)'};border-radius:16px;height:380px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center">
+ <div style="font-size:${k[0].length>3?96:118}px;font-weight:800;color:${k[4]?'#fff':'var(--royal)'};line-height:1"><span data-count="${k[0]}" data-cat="${1.4+i*0.75}" data-fmt="${k[0].length>3?1:0}">0</span><span style="font-size:44px">${k[1]}</span></div>
+ <div style="font-size:34px;font-weight:700;margin-top:30px;color:${k[4]?'#fff':'var(--deep)'}">${k[2]}</div>
+ <div style="font-size:24px;margin-top:14px;color:${k[4]?'#9FB6CC':'var(--muted)'}">${k[3]}</div></div>`).join('')
+ +`<div class="a" data-fx="up" data-at="5.4" style="grid-column:1/5;font-size:30px;color:var(--muted);margin-top:16px">민간 추정 120~130곳 · 재학생 약 2.6만 명 (ISC Research 2023, 언론 인용) — 정부 전수조사는 2014년 이후 처음</div>`;
+
+// S4 worlds
+const Wd=[['외국교육기관','경제자유구역 · 강원','국내 학력 인정','var(--green)'],['제주 국제학교','제주특별법','국내 학력 인정','var(--green)'],['외국인학교','초·중등교육법','조건부 인정','var(--amber)'],['비인가 국제학교','학원법 · 평생교육시설','학력 불인정','var(--red)',1]];
+$('worlds').innerHTML=Wd.map((w,i)=>`<div class="a" data-fx="pop" data-at="${1.2+i*0.9}" style="border-radius:16px;height:340px;padding:40px 36px;background:${w[4]?'var(--lblue)':'var(--lgray)'};${w[4]?'outline:4px solid var(--royal);':''}display:flex;flex-direction:column;justify-content:space-between">
+ <div><div style="font-size:24px;font-weight:700;color:var(--muted)">0${i+1}</div><div style="font-size:44px;font-weight:800;color:var(--deep);margin-top:16px;white-space:nowrap">${w[0]}</div><div style="font-size:28px;color:var(--muted);margin-top:16px">${w[1]}</div></div>
+ <div><span class="pill" style="background:${w[3]}">${w[2]}</span>${w[4]?'<div style="font-size:30px;font-weight:700;color:var(--royal);margin-top:18px">97 ~ 130곳</div>':''}</div></div>`).join('');
+
+// S5 bars
+const HB=[['교육부 점검 (2026.3)',97,1],['언론 사설 (2026.4)',120],['KBS 전수조사 (2026.3)',130],['ISC Research (2023)',130]];
+$('hbars').innerHTML=HB.map((b,i)=>`<div style="display:flex;align-items:center;margin-bottom:34px"><div style="width:330px;font-size:27px;font-weight:600">${b[0]}</div>
+ <div class="a" data-fx="grow" data-at="${1.2+i*0.45}" data-d="1.1" style="transform-origin:left;height:62px;width:${b[1]*3.2}px;background:${b[2]?'var(--royal)':'var(--sky)'};border-radius:0 8px 8px 0"></div>
+ <div class="a" data-fx="fade" data-at="${1.9+i*0.45}" style="font-size:34px;font-weight:800;margin-left:16px;color:${b[2]?'var(--royal)':'var(--text)'}">${b[1]}</div></div>`).join('');
+const VB=[['경기',39,1],['서울',33,1],['기타',25]];
+$('vbars').innerHTML=VB.map((b,i)=>`<div style="width:170px;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%">
+ <div class="a" data-fx="fade" data-at="${4.4+i*0.4}" style="font-size:44px;font-weight:800;color:${b[2]?'var(--royal)':'var(--text)'};margin-bottom:10px">${b[1]}</div>
+ <div class="a" data-fx="wipeUp" data-at="${3.8+i*0.4}" data-d="1" style="width:170px;height:${b[1]*9.5}px;background:${b[2]?'var(--royal)':'var(--sky)'};border-radius:8px 8px 0 0"></div></div>`).join('');
+$('vlab').innerHTML=VB.map(b=>`<div style="width:170px;text-align:center">${b[0]}</div>`).join('');
+
+// S6 chevrons
+const CH=[['유아기','영어유치원','#EAF4FC','var(--text)'],['초등 진입','“영어 환경 유지”','#D3E8F8','var(--text)'],['초·중·고','비인가 국제학교','var(--royal)','#fff'],['출구','해외대학 · 검정고시','var(--deep)','#fff']];
+$('chev').innerHTML=CH.map((c,i)=>`<div class="a" data-fx="left" data-at="${1.0+i*0.7}" style="flex:1;margin-left:${i?-30:0}px;background:${c[2]};color:${c[3]};clip-path:polygon(0 0,calc(100% - 50px) 0,100% 50%,calc(100% - 50px) 100%,0 100%,${i?'50px 50%':'0 100%'});padding:0 70px 0 ${i?90:50}px;display:flex;flex-direction:column;justify-content:center">
+ <div style="font-size:24px;font-weight:700;opacity:.8">${c[0]}</div><div style="font-size:38px;font-weight:800;margin-top:10px;white-space:nowrap">${c[1]}</div></div>`).join('');
+const DR=[['영어 조기교육의 연장','영어유치원 졸업 가정이 초등 이후에도 영어 환경을 찾는다'],['유학 수요의 국내 유입','코로나 이후 조기유학 대신 국내 대체재로 인식'],['인가학교 공급 부족','인가 국제학교 7~8곳, 제주·송도에 편중']];
+$('drivers').innerHTML=DR.map((d,i)=>`<div class="a card" data-fx="up" data-at="${4.0+i*0.8}"><div style="font-size:34px;font-weight:800;color:var(--deep)">${d[0]}</div><div style="font-size:28px;color:var(--text);margin-top:16px;line-height:1.45">${d[1]}</div></div>`).join('');
+
+// S7 timeline
+const TL=[['2014','교육부 특별점검,<br>이후 12년 공백'],['2025.12–26.3','213곳 점검<br>국제학교형 97곳',1],['2026.4.29','관리 강화 방안<br>학교형 폐쇄 방침',1],['2026.8','‘오후반·온라인’<br>우회 등장'],['2026.10.23','국감: 11월 고발<br>이행강제금 검토',1],['2026.11~','첫 고발 집행<br>의지의 시험대']];
+const step=(1920-240)/TL.length;
+$('tl').innerHTML=TL.map((t,i)=>{const cx=120+step*i+step/2,up=i%2===0,at=1.4+i*1.1;return `
+ <div class="a" data-fx="pop" data-at="${at}" style="position:absolute;left:${cx-(t[2]?22:16)}px;top:${603-(t[2]?22:16)}px;width:${t[2]?44:32}px;height:${t[2]?44:32}px;border-radius:50%;background:${t[2]?'var(--deep)':'var(--royal)'}"></div>
+ <div class="a" data-fx="${up?'up':'up'}" data-at="${at+0.2}" style="position:absolute;left:${cx-step/2+10}px;width:${step-20}px;text-align:center;top:${up?330:660}px">
+  <div style="font-size:32px;font-weight:800;color:var(--royal)">${t[0]}</div><div style="font-size:28px;line-height:1.45;margin-top:12px;font-weight:${t[2]?700:400};color:${t[2]?'var(--deep)':'var(--text)'}">${t[1]}</div></div>`}).join('');
+
+// S8 bypass
+const BP=[['오후반 전환','정규 수업 후 영어 몰입','회색지대','var(--amber)'],['온라인스쿨 + 학습관리','해외 온라인스쿨이 졸업장 발급','규제 공백','var(--red)'],['대안교육기관 등록 시도','목적을 바꿔 등록 신청','특혜 논란','var(--amber)'],['인가 국제학교 이동','제주 등 인가학교 관심 증가','합법 흡수','var(--green)']];
+$('bypass').innerHTML=BP.map((b,i)=>`<div class="a card" data-fx="left" data-at="${2.4+i*0.9}" style="display:flex;align-items:center;justify-content:space-between;margin-bottom:24px;padding:28px 34px">
+ <div><div style="font-size:34px;font-weight:800;color:var(--deep)">${b[0]}</div><div style="font-size:26px;color:var(--muted);margin-top:8px">${b[1]}</div></div><span class="pill" style="background:${b[3]};white-space:nowrap">${b[2]}</span></div>`).join('');
+
+// S9 scenarios
+const SN=[['A','지하화·변형',25,'입법 지연 · 집행 미온','학원 간판 아래 학교 운영 지속, 리스크는 학부모에게'],['B','축소·재배치',55,'이행강제금 입법 · 인가형 확대','전일제는 절반 이하로, 수요는 인가학교·방과후·온라인으로',1],['C','제도권 흡수',20,'법 개정 · 국제학교 특례 확대','상위 시설은 양성화, 하위 시설은 퇴출']];
+$('scen').innerHTML=SN.map((s,i)=>`<div class="a" data-fx="pop" data-at="${1.2+i*0.9}" style="border-radius:16px;padding:40px;height:${s[5]?520:470}px;background:${s[5]?'var(--deep)':'var(--lgray)'};color:${s[5]?'#fff':'var(--text)'};display:flex;flex-direction:column">
+ ${s[5]?'<div style="align-self:flex-start;background:var(--sky);color:var(--deep);font-weight:800;font-size:22px;padding:6px 18px;border-radius:20px;margin-bottom:14px">BASE CASE</div>':''}
+ <div style="display:flex;justify-content:space-between;align-items:baseline"><div style="font-size:40px;font-weight:800;color:${s[5]?'#fff':'var(--deep)'}">${s[0]}. ${s[1]}</div>
+ <div style="font-size:84px;font-weight:800;color:${s[5]?'var(--sky)':'var(--royal)'};line-height:1"><span data-count="${s[2]}" data-cat="${1.5+i*0.9}">0</span><span style="font-size:40px">%</span></div></div>
+ <div style="font-size:26px;font-weight:700;margin-top:24px;color:${s[5]?'var(--sky)':'var(--royal)'}">조건 · ${s[3]}</div>
+ <div style="font-size:30px;margin-top:20px;line-height:1.5">${s[4]}</div></div>`).join('');
+
+// S10 decisions
+const DC=[['‘국제학교형(전일제) 사업 미진출’ 원칙 확정','2026.11'],['럭스어학원 컴플라이언스 점검 착수','2026.12'],['방과후 영어 몰입 · 제2외국어 파일럿 (조건부)','2027.2 개시']];
+$('dec').innerHTML=DC.map((d,i)=>`<div class="a" data-fx="left" data-at="${2.6+i*1.4}" style="display:flex;align-items:center;gap:36px;background:${i===2?'var(--lblue)':'var(--lgray)'};border-radius:14px;padding:24px 36px;margin-bottom:22px">
+ <div style="width:76px;height:76px;border-radius:50%;background:var(--royal);color:#fff;font-size:40px;font-weight:800;display:flex;align-items:center;justify-content:center;flex:none">${i+1}</div>
+ <div style="font-size:38px;font-weight:700;color:var(--deep);flex:1">${d[0]}</div><div style="font-size:28px;color:var(--muted);white-space:nowrap">기한 ${d[1]}</div></div>`).join('');
+
+// engine
+const cl=x=>Math.max(0,Math.min(1,x)),eo=x=>1-Math.pow(1-x,3),eio=x=>x<.5?4*x*x*x:1-Math.pow(-2*x+2,3)/2,eback=x=>{const c1=1.4,c3=c1+1;return 1+c3*Math.pow(x-1,3)+c1*Math.pow(x-1,2)};
+function fx(el,p,k){const s=el.style;switch(k){
+ case'up':s.opacity=p;s.transform=`translateY(${(1-p)*46}px)`;break;
+ case'left':s.opacity=p;s.transform=`translateX(${(1-p)*-70}px)`;break;
+ case'fade':s.opacity=p;break;
+ case'scale':s.opacity=p;s.transform=`scale(${.9+.1*p})`;break;
+ case'pop':s.opacity=cl(p*2);s.transform=`translateY(${(1-p)*40}px) scale(${.82+.18*eback(p)})`;break;
+ case'grow':s.transform=`scaleX(${p})`;break;
+ case'wipeUp':s.clipPath=`inset(${(1-p)*100}% 0 0 0)`;break;
+ case'wipeR':s.clipPath=`inset(0 ${(1-p)*100}% 0 0)`;break;
+ case'wipeL':s.clipPath=`inset(0 0 0 ${(1-p)*100}%)`;break;}}
+const b1El=$('b1'),b2El=$('b2'),foot=$('foot'),prog=$('prog');
+window.render=function(t){
+ let cur;for(const [id,a,b] of SC){const el=$(id);const on=t>=a&&t<b;el.style.display=on?'block':'none';if(on)cur=[id,a,b,el];}
+ if(!cur){const l=SC.at(-1);cur=[...l,$(l[0])];cur[3].style.display='block';}
+ const [id,a,b,root]=cur,lt=t-a,dur=b-a;
+ root.querySelectorAll('.a').forEach(el=>{const raw=cl((lt-(+el.dataset.at||0))/(+(el.dataset.d||.9)));fx(el,el.dataset.fx==='pop'?raw:eo(raw),el.dataset.fx);});
+ root.querySelectorAll('[data-count]').forEach(el=>{const v=Math.round(eo(cl((lt-(+el.dataset.cat))/1.6))*(+el.dataset.count));el.textContent=el.dataset.fmt==='1'?v.toLocaleString('en-US'):v;});
+ let x1=-130,x2=-130;for(let i=1;i<SC.length;i++){const u=(t-(SC[i][1]-.55))/1.1;if(u>=0&&u<=1){x1=-125+250*eio(cl(u*1.08));x2=-125+250*eio(cl(u*1.08-.08));}}
+ b1El.style.transform=`translateX(${x1}%)`;b2El.style.transform=`translateX(${x2}%)`;
+ const lab=LABEL[id];foot.style.display=lab?'block':'none';if(lab)foot.innerHTML=`비인가 국제학교 <b>●</b> ${lab}`;
+ prog.style.width=(t/TOTAL*100)+'%';
+};
+render(0);
+</script>
+</body></html>
